@@ -16,9 +16,8 @@ from src.logger import logging
 from src.utils import save_object,evaluate_models
 
 @dataclass
-class ModelTrainerConfig():
-    def __init__(self):
-        trained_model_file_path=os.path.join('artifacts',"model.pkl")
+class ModelTrainerConfig:
+        trained_model_file_path=os.path.join("artifacts","model.pkl")
     
 class ModelTrainer:
     def __init__(self):
@@ -27,10 +26,12 @@ class ModelTrainer:
     def initiate_model_trainer(self,train_array,test_array):
         try:
             logging.info("Splitting Train and Test input data")
-            X_train,y_train,X_test,y_test=(train_array[:,:,-1],
-                                           train_array[:,-1],
-                                           test_array[:,:,-1],
-                                           test_array[:,-1])
+            X_train,y_train,X_test,y_test=(
+                train_array[:,:-1],
+                train_array[:,-1],
+                test_array[:,:-1],
+                test_array[:,-1]
+            )
             
             models={
                 "Linear Regression": LinearRegression(),
