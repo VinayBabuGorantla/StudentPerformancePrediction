@@ -27,7 +27,7 @@ class PredictPipeline:
 
 
 class CustomData:
-    def __init__(  self,
+    def __init__(self,
         gender: str,
         race_ethnicity: str,
         parental_level_of_education,
@@ -37,17 +37,17 @@ class CustomData:
         writing_score: int):
 
         self.gender = gender
-
+        
         self.race_ethnicity = race_ethnicity
-
+        
         self.parental_level_of_education = parental_level_of_education
-
+        
         self.lunch = lunch
-
+        
         self.test_preparation_course = test_preparation_course
-
+        
         self.reading_score = reading_score
-
+        
         self.writing_score = writing_score
 
     def get_data_as_data_frame(self):
