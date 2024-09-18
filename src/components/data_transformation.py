@@ -38,7 +38,7 @@ class DataTransformation:
             
             cat_pipeline=Pipeline(steps=[("imputer",SimpleImputer(strategy="most_frequent")),
                                          ("One-Hot Encoder",OneHotEncoder()),
-                                         ("Scaler",StandardScaler())
+                                         ("Scaler",StandardScaler(with_mean=False))
                                          ]
             )
             #logging.info("Categorical column encoding completed")
@@ -65,7 +65,7 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
             
             target_column_name="math_score"
-            numerical_columns=['writing_score','reading_score']
+            numerical_columns=["writing_score","reading_score"]
             
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
