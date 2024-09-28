@@ -9,4 +9,5 @@ xgboost
 dill
 pickle5
 Flask
+streamlit
 #-e .
