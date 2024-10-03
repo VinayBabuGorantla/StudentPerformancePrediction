@@ -1,3 +1,5 @@
+# Change the file name to application.py for aws deployment
+
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
